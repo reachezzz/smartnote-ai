@@ -1,30 +1,24 @@
-# 🧠 SmartNote AI — Version 2.0
+# SmartNote AI 3.0 🧠
 
-A privacy-conscious, responsive, open-source notes workspace.
+Kostenlose, mobilfreundliche Open-Source-Notiz-App. Läuft als statische Website auf GitHub Pages.
 
-**Live demo:** https://reachezzz.github.io/smartnote-ai/
+## Funktionen
+- Notizen lokal erstellen, bearbeiten, löschen, durchsuchen und favorisieren
+- Regelbasierte Kategorien, kurze Zusammenfassung und Schlagwortvorschläge ohne API
+- JSON-Backup und -Import
+- Optionaler API-Modus über einen **eigenen HTTPS-Backend-Proxy**
 
-## Features
-- Create, edit and delete notes
-- Search notes and filter by category or favorites
-- Offline, rule-based category suggestions and extractive previews (not generative AI)
-- JSON backup export and import
-- Responsive dark-mode dashboard
-- Local browser storage, no account or server required
+## KI-Anbindung
+Im API-Modus sendet die App `{ "text": "..." }` per POST an den vom Nutzer eingegebenen HTTPS-Endpunkt und erwartet JSON mit `{ "result": "Analyse..." }`. Der Endpunkt muss CORS, Authentifizierung, Rate Limits und sichere Schlüsselverwaltung selbst implementieren. **Niemals einen Anbieter-API-Schlüssel in dieser statischen Website oder im Repository speichern.** Der optionale Proxy ist nicht Bestandteil dieses Repositories. API-Nutzung kann Kosten verursachen.
 
-## Run
-Open `index.html` in a browser or deploy this repository with GitHub Pages (`main` / root).
+## Datenschutz
+Ohne API-Modus bleiben Notizen im `localStorage` des jeweiligen Browsers. Kein Login, kein Cloud-Sync. Im API-Modus wird der eingegebene Text nach ausdrücklicher Bestätigung an den ausgewählten Server übertragen. Backups regelmäßig exportieren.
 
-## Privacy and limitations
-Notes are stored in the current browser's `localStorage`, **not encrypted** and **not synced**. Clearing site data removes them. Export backups regularly. Do not store sensitive secrets on shared devices.
+## Installation
+`index.html` im Browser öffnen oder GitHub Pages für den `main`-Branch im Repository aktivieren.
 
-The offline tools are deterministic heuristics; **there is no Claude API integration yet**. A future integration must use a server-side proxy with authentication, quotas, abuse protection and a server-held API key. Never put API keys in public JavaScript or GitHub commits. Claude subscriptions and API billing are separate.
+## Upgrade von 2.0
+Diese Version verwendet einen eigenen lokalen Speicherschlüssel. Vorhandene V2-Notizen werden **nicht automatisch übernommen**. Bitte Daten vorher sichern, falls erforderlich.
 
-## Roadmap
-- Optional secure server-side AI analysis
-- Automated tests and accessibility improvements
-- Optional encrypted sync
-- User-controlled tags
-
-## License
-MIT (see LICENSE).
+## Lizenz
+MIT – siehe LICENSE im bestehenden Repository.
