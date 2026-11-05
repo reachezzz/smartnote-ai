@@ -1,24 +1,30 @@
-# SmartNote AI 🧠
+# 🧠 SmartNote AI — Version 2.0
 
-Eine kleine, kostenlose Open-Source-Web-App zum Erfassen, Durchsuchen und thematischen Einordnen von Notizen.
+A privacy-conscious, responsive, open-source notes workspace.
 
-## Funktionen
-- Notizen erstellen, bearbeiten und löschen
-- Volltextsuche
-- Regelbasierte Themenkategorien
-- Lokale Speicherung im Browser (`localStorage`)
-- Mobilfreundliches Design
+**Live demo:** https://reachezzz.github.io/smartnote-ai/
 
-**Hinweis:** Die Kategorisierung ist derzeit regelbasiert; es ist noch keine KI oder Claude-API eingebunden. Notizen bleiben im jeweiligen Browser und können beim Löschen der Browserdaten verloren gehen. Keine Synchronisierung oder Sicherung.
+## Features
+- Create, edit and delete notes
+- Search notes and filter by category or favorites
+- Offline, rule-based category suggestions and extractive previews (not generative AI)
+- JSON backup export and import
+- Responsive dark-mode dashboard
+- Local browser storage, no account or server required
 
-## Start
-`index.html` im Browser öffnen oder das Repository über GitHub Pages veröffentlichen.
+## Run
+Open `index.html` in a browser or deploy this repository with GitHub Pages (`main` / root).
+
+## Privacy and limitations
+Notes are stored in the current browser's `localStorage`, **not encrypted** and **not synced**. Clearing site data removes them. Export backups regularly. Do not store sensitive secrets on shared devices.
+
+The offline tools are deterministic heuristics; **there is no Claude API integration yet**. A future integration must use a server-side proxy with authentication, quotas, abuse protection and a server-held API key. Never put API keys in public JavaScript or GitHub commits. Claude subscriptions and API billing are separate.
 
 ## Roadmap
-- Export/Import als JSON
-- Verbesserte Bearbeitung
-- Optionale KI-Kategorisierung mit transparenter Datenschutzerklärung
-- Tests und Barrierefreiheit
+- Optional secure server-side AI analysis
+- Automated tests and accessibility improvements
+- Optional encrypted sync
+- User-controlled tags
 
-## Lizenz
-MIT, siehe LICENSE.
+## License
+MIT (see LICENSE).
